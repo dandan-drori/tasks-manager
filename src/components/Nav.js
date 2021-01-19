@@ -3,13 +3,18 @@ import styled from 'styled-components'
 
 const Nav = () => {
   return (
-    <div>
-    </div>
+    <Wrapper>
+
+    </Wrapper>
   )
 }
 
 export default Nav
 
 const Wrapper = styled.div`
-  
+  overflow-x: hidden;
+`
+
+const Container = styled.div`
+    
 `
