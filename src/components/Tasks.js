@@ -1,13 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 
 const Tasks = () => {
   return (
     <Wrapper>
       <Container>
         <Header>My Tasks</Header>
-        <StyledLink to='/'>Home</StyledLink>
       </Container>
     </Wrapper>
   )
@@ -45,9 +43,4 @@ const Header = styled.p`
     font-size: 3.5rem;
     margin-bottom: 3rem;
   }
-`
-
-const StyledLink = styled(Link)`
-  color: #fefefe;
-  font-size: 1.5rem;
 `
