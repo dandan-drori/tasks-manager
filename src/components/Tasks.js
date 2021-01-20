@@ -1,11 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useSelector } from 'react-redux'
+import Task from './Task'
 
 const Tasks = () => {
+
+  const tasksData = useSelector(state => state.tasks.tasksData)
+  
+  console.log(tasksData[0])
+
   return (
     <Wrapper>
       <Container>
         <Header>My Tasks</Header>
+        <List>
+            {
+              tasksData.map( (task, index) => <Task key={index} content={task.content} header={task.header} /> )
+            }
+        </List>
       </Container>
     </Wrapper>
   )
@@ -22,7 +34,6 @@ const Container = styled.div`
   height: 100vh;
   background-color #050505;
   text-align: center;
-  padding: 2rem;
   padding-top: 3rem;
 
   @media (max-width: 768px) {
@@ -44,3 +55,12 @@ const Header = styled.p`
     margin-bottom: 3rem;
   }
 `
+
+const List = styled.ul`
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
+
